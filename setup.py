@@ -1,27 +1,59 @@
 import os
 import argparse
-import gdown
 import hashlib
 import json
+
+try:
+    import gdown
+except ModuleNotFoundError as e:
+    print(f'The Python package `gdown` is required to download the dataset.\nPlease run: `pip install gdown`\n')
+    raise
+
 
 # parse args
 parser = argparse.ArgumentParser(description='Download files for HOPE datasets.')
 parser.add_argument('--overwrite', action='store_true',
-                    help='Download and overwrite existing paths')
-parser.add_argument('--skip-eval-meshes', action='store_true',
-                    help='Omit low-res object meshes')
-parser.add_argument('--skip-hope-image', action='store_true',
-                    help='Omit HOPE-Image dataset')
-parser.add_argument('--skip-hope-video', action='store_true',
-                    help='Omit HOPE-Video dataset')
-parser.add_argument('--skip-test-sets', action='store_true',
-                    help='Omit test sets and only download validation sets')
-parser.add_argument('--do-test', action='store_true',
-                    help='Debug')
+                    help='Overwrite existing paths')
+
+parser.add_argument('--meshes', action='store_true',
+                    help='Download low-res object meshes')
+
+parser.add_argument('--image', action='store_true',
+                    help='Download HOPE-Image dataset')
+parser.add_argument('--image-valid', action='store_true',
+                    help='Download HOPE-Image validation dataset')
+parser.add_argument('--image-test', action='store_true',
+                    help='Download HOPE-Image test dataset')
+
+parser.add_argument('--video', action='store_true',
+                    help='Download HOPE-Video dataset')
+parser.add_argument('--video-valid', action='store_true',
+                    help='Download HOPE-Video validation dataset')
+parser.add_argument('--video-test', action='store_true',
+                    help='Download HOPE-Video test dataset')
+
 args = parser.parse_args()
 
+# by default, download all parts
+if not any([
+    args.meshes, 
+    args.image, args.image_valid, args.image_test, 
+    args.video, args.video_valid, args.video_test
+]):
+    args.meshes = True
+    args.image = True
+    args.video = True
+
+if args.image:
+    args.image_valid = True
+    args.image_test = True
+
+if args.video:
+    args.video_valid = True
+    args.video_test = True
+
 # read list of urls for downloading the dataset
-urls = json.load(open('download_urls.json'))
+urls = json.load(open('setup.json'))
 filter_urls = lambda k: [(u['url'], u['dest'], u['md5']) for u in urls if u['group']==k]
 
 # function to compute md5 hashes (why isn't this already in hashlib?!)
@@ -59,37 +91,34 @@ def download_and_extract(group, msg=None, skip_existing=True):
     print('\nDone.\n\n')
 
 # download requested parts of dataset
-if args.do_test:
-    download_and_extract('test', skip_existing=not args.overwrite)
-
-if not args.skip_eval_meshes:
+if args.meshes:
     download_and_extract(
-        'eval_meshes',
+        'meshes_eval',
         msg='low-res eval meshes',
         skip_existing=not args.overwrite)
 
-if not args.skip_hope_image:
+if args.image_valid:
     download_and_extract(
-        'hope_image_val', 
+        'hope_image_valid', 
         msg='HOPE-Image validation set',
         skip_existing=not args.overwrite
     )
 
-if not args.skip_hope_image and not args.skip_test_sets:
+if args.image_test:
     download_and_extract(
         'hope_image_test', 
         msg='HOPE-Image test set',
         skip_existing=not args.overwrite
     )
 
-if not args.skip_hope_video:
+if args.video_valid:
     download_and_extract(
-        'hope_video_val', 
+        'hope_video_valid', 
         msg='HOPE-Video validation set',
         skip_existing=not args.overwrite
     )
 
-if not args.skip_hope_video and not args.skip_test_sets:
+if args.video_test:
     download_and_extract(
         'hope_video_test', 
         msg='HOPE-Video test set',
