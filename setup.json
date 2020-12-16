@@ -1,0 +1,93 @@
+[
+  {
+    "filename": "hope_meshes_eval.zip",
+    "url": "https://drive.google.com/uc?id=1Y6Jo7EVM0ANjcWmYOKdGy7LWpld1VWfc",
+    "dest": "meshes/eval",
+    "md5": "619ee0142016369554e26592d0368a78",
+    "group": "meshes_eval"
+  },
+  {
+    "filename": "hope_image_valid.zip",
+    "url": "https://drive.google.com/uc?id=16_SWVezlpO60j60CgKq2KR8SvFMw1aSJ",
+    "dest": "hope_image/valid",
+    "md5": "8175c04733f266c6aa98091fa0f1c879",
+    "group": "hope_image_valid"
+  },
+  {
+    "filename": "hope_image_test.zip",
+    "url": "https://drive.google.com/uc?id=1StCv57GAs1ftiwdAXrruiugqB5rPR3p0",
+    "dest": "hope_image/test",
+    "md5": "aefa22cf56609c7b91ae0c3eccbc8f76",
+    "group": "hope_image_test"
+  },
+  {
+    "filename": "hope_video_scene_0000.zip",
+    "url": "https://drive.google.com/uc?id=1PVYp08FShW_J0Z6lgPlsb8iUqruOg7sn",
+    "dest": "hope_video/valid/scene_0000",
+    "md5": "02bbfcdd9f610d638ec26ddd607777fb",
+    "group": "hope_video_valid"
+  },
+  {
+    "filename": "hope_video_scene_0001.zip",
+    "url": "https://drive.google.com/uc?id=1-UB4AZVFr7g2nICI6vUeYDKSc5Od0sAv",
+    "dest": "hope_video/test/scene_0001",
+    "md5": "6cf92484944f338f86335a2018e4cb9e",
+    "group": "hope_video_test"
+  },
+  {
+    "filename": "hope_video_scene_0002.zip",
+    "url": "https://drive.google.com/uc?id=15D6TXMRlHzL5IGjwvGObYJQ7fiTyPys_",
+    "dest": "hope_video/test/scene_0002",
+    "md5": "4d844a48ba961f7ced07a5af8549e050",
+    "group": "hope_video_test"
+  },
+  {
+    "filename": "hope_video_scene_0003.zip",
+    "url": "https://drive.google.com/uc?id=10Zcu0c7n9OjGHLdIU3IGlqakDFYs_e6S",
+    "dest": "hope_video/test/scene_0003",
+    "md5": "125c6e388101ee4d5ac1fd0740fef560",
+    "group": "hope_video_test"
+  },
+  {
+    "filename": "hope_video_scene_0004.zip",
+    "url": "https://drive.google.com/uc?id=1Gwwk77VdYvnbnaHQ6x5GPyEgIr3rZrSD",
+    "dest": "hope_video/test/scene_0004",
+    "md5": "6a7e42ac6f272c782f93ff23b0df3f4e",
+    "group": "hope_video_test"
+  },
+  {
+    "filename": "hope_video_scene_0005.zip",
+    "url": "https://drive.google.com/uc?id=12ZIA_31M1UyaYdP8p_1mxZyaa0hggHRt",
+    "dest": "hope_video/test/scene_0005",
+    "md5": "26a4dfeac6f1299481c449b21c2f4e28",
+    "group": "hope_video_test"
+  },
+  {
+    "filename": "hope_video_scene_0006.zip",
+    "url": "https://drive.google.com/uc?id=1x0e6wQI9gcMMqeZEzbVqCOqrOuj6WLbC",
+    "dest": "hope_video/test/scene_0006",
+    "md5": "0ab2e32f924a1477beebf8f4d947338b",
+    "group": "hope_video_test"
+  },
+  {
+    "filename": "hope_video_scene_0007.zip",
+    "url": "https://drive.google.com/uc?id=15HtOzfy8v2V5IXKU6s4H_6nR3TjagOA-",
+    "dest": "hope_video/test/scene_0007",
+    "md5": "ce5066e41b2c88f609c928ff5b010109",
+    "group": "hope_video_test"
+  },
+  {
+    "filename": "hope_video_scene_0008.zip",
+    "url": "https://drive.google.com/uc?id=1VAi4ScMSkTDY4Q6cuYje9OI_G6ko8kJi",
+    "dest": "hope_video/test/scene_0008",
+    "md5": "df522b2090e0ce53947d59072405376c",
+    "group": "hope_video_test"
+  },
+  {
+    "filename": "hope_video_scene_0009.zip",
+    "url": "https://drive.google.com/uc?id=1BZbQDV0Dzm4YeVASKPNGkm6R4EMIYkYB",
+    "dest": "hope_video/valid/scene_0009",
+    "md5": "708a02b3f5c15c68a4b3978a0065e908",
+    "group": "hope_video_valid"
+  }
+]
