@@ -33,7 +33,7 @@ The HOPE-Video dataset contains 10 video sequences (2038 frames) with 5--20 obje
 - Camera intrinsic/extrinsic
 - RGB images of 640*480
 - Depth images of 640*480
-- 3D Reconstruction scene (.ply) based on [CascadeStereo](https://github.com/alibaba/cascade-stereo)
+- 3D scene reconstruction based on [CascadeStereo](https://github.com/alibaba/cascade-stereo)
 - Object pose annotation in the camera frame
 
 <!-- A scene reconstruction computed by [CascadeStereo](https://github.com/alibaba/cascade-stereo) is included for each sequence in `scene.ply`. -->
