@@ -16,7 +16,11 @@ parser.add_argument('--overwrite', action='store_true',
                     help='Overwrite existing paths')
 
 parser.add_argument('--meshes', action='store_true',
+                    help='Download low-res and high-res object meshes')
+parser.add_argument('--meshes-eval', action='store_true',
                     help='Download low-res object meshes')
+parser.add_argument('--meshes-full', action='store_true',
+                    help='Download high-res object meshes')
 
 parser.add_argument('--image', action='store_true',
                     help='Download HOPE-Image dataset')
@@ -36,13 +40,17 @@ args = parser.parse_args()
 
 # by default, download all parts
 if not any([
-    args.meshes, 
+    args.meshes, args.meshes_eval, args.meshes_full, 
     args.image, args.image_valid, args.image_test, 
     args.video, args.video_valid, args.video_test
 ]):
     args.meshes = True
     args.image = True
     args.video = True
+
+if args.meshes:
+    args.meshes_eval = True
+    args.meshes_full = True
 
 if args.image:
     args.image_valid = True
@@ -91,10 +99,16 @@ def download_and_extract(group, msg=None, skip_existing=True):
     print('\nDone.\n\n')
 
 # download requested parts of dataset
-if args.meshes:
+if args.meshes_eval:
     download_and_extract(
         'meshes_eval',
         msg='low-res eval meshes',
+        skip_existing=not args.overwrite)
+
+if args.meshes_eval:
+    download_and_extract(
+        'meshes_full',
+        msg='full-res meshes',
         skip_existing=not args.overwrite)
 
 if args.image_valid:

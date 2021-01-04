@@ -12,7 +12,7 @@ The HOPE-Video dataset consists of ten sequences captured by a camera mounted to
 
 To download the dataset, install the Python package `gdown` via `pip install gdown`, then run `python setup.py` to download the dataset from [Google Drive](https://drive.google.com/drive/folders/1Hj5K9RIdcNxBFiU8qG0-oL3Ryd9f2gOY?usp=sharing) and unpack the zip archives.
 
-By default, this tool will download the HOPE-Image validation and test sets (`hope_image/valid`, 50MB; `hope_image/test`; 179MB), the HOPE-Video set (`hope_video/`, 2.9GB), and low-resolution meshes (`meshes/eval/`, 33MB). Use the command line options to download only specific parts.
+By default, this tool will download the HOPE-Image validation and test sets (`hope_image/valid`, 50MB; `hope_image/test`; 179MB), the HOPE-Video set (`hope_video/`, 2.9GB), and low-resolution (`meshes/eval/`, 33MB) and high-resolution (`meshes/full/`, 98MB) meshes. Use the command line options to download only specific parts.
 
 ## HOPE-Image
 

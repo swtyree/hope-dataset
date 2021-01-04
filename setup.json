@@ -7,6 +7,13 @@
     "group": "meshes_eval"
   },
   {
+    "filename": "hope_meshes_full.zip",
+    "url": "https://drive.google.com/uc?id=1MFv54QAoPwVp6IrsqGmfMXAQwbBnEAX_",
+    "dest": "meshes/full",
+    "md5": "1aa801890359e5e5931821f1e2eb6acb",
+    "group": "meshes_full"
+  },
+  {
     "filename": "hope_image_valid.zip",
     "url": "https://drive.google.com/uc?id=16_SWVezlpO60j60CgKq2KR8SvFMw1aSJ",
     "dest": "hope_image/valid",
