@@ -2,7 +2,7 @@
 
 ![](readme_files/env_01.jpg) ![](readme_files/env_02.jpg) ![](readme_files/env_03.jpg)
 
-The HOPE datasets consist of RGBD images and video sequences with labeled 6-DoF poses for 28 toy grocery objects. The toy grocery objects are readily available for purchase and are ideal for robotic manipulation. We provide 3D textured meshes for generating synthetic training data. 
+The HOPE datasets consist of RGBD images or video sequences with labeled 6-DoF poses for 28 toy grocery objects. The toy grocery objects are readily available for purchase and are ideal for robotic manipulation. We provide 3D textured meshes for generating synthetic training data.
 
 The HOPE-Image dataset shows the objects in 50 scenes from 10 household/office environments. Up to 5 lighting variations are captured for each scene, including backlighting and angled direct lighting with cast shadows. Scenes are cluttered with varying levels of occlusion.
 
@@ -12,31 +12,31 @@ The HOPE-Video dataset consists of ten sequences captured by a camera mounted to
 
 To download the dataset, install the Python package `gdown` via `pip install gdown`, then run `python setup.py` to download the dataset from [Google Drive](https://drive.google.com/drive/folders/1Hj5K9RIdcNxBFiU8qG0-oL3Ryd9f2gOY?usp=sharing) and unpack the zip archives.
 
-By default, this tool will download the HOPE-Image validation and test sets (`hope_image/valid`, 50MB; `hope_image/test`; 179MB), the HOPE-Video set (`hope_video/`, 2.9GB), and low-resolution (`meshes/eval/`, 33MB) meshes. Use command line options to download only specific parts.
+By default, this tool will download the HOPE-Image validation and test sets (`hope_image/valid`, 50MB; `hope_image/test`; 179MB), the HOPE-Video set (`hope_video/`, 2.9GB), and low-resolution meshes (`meshes/eval/`, 33MB). Use the command line options to download only specific parts.
 
 ## HOPE-Image
 
-The HOPE-Image dataset contains 188 test images taken in 8 environments, with a total of 40 scenes (unique camera and object poses). An additional 50 validation images is included from 2 environments in 10 scene arrangements.
+The HOPE-Image dataset contains 188 test images taken in 8 environments, with a total of 40 scenes (unique camera and object poses). An additional 50 validation images are included from 2 environments in 10 scene arrangements.
 
 Within each scene, up to 5 lighting variations are captured with the same camera and object poses. For example, the captures in `valid/scene_0000/*.json` all depict the same camera pose and arrangement of objects, but each individual capture (`0000.json`, `0001.json`, ...) has a different lighting condition. For this reason, each image should be treated independently for purposes of pose prediction. The most favorable lighting condition for each scene is found in image `0000.json`.
 
 ![](readme_files/light_01.jpg) ![](readme_files/light_02.jpg) ![](readme_files/light_03.jpg)
 
-Images were captured using a RealSense D415 RGBD camera. We observed systematic errors in the depth values relative to the estimated distance of a calibration grid. To correct for this, we scaled depth frames by a factor of `0.98042517` before registering to RGB.
+Images were captured using a RealSense D415 RGBD camera. We observed systematic errors in the depth values relative to the estimated distance of a calibration grid. To correct for this, we scaled depth frames by a factor of `0.98042517` before registering to RGB. Annotations were made manually using these corrected RGBD frames.
 
 **NOTE: Only validation set annotations are included in this current release. Test annotations will be made available at a later time.**
 
 ## HOPE-Video
 
-The HOPE-Video dataset contains 10 video sequences (2038 frames) with 5--20 objects on a tabletop scene captured by a robotic arm-mounted RealSense D415 RGBD camera. In each sequence, the camera is moved to capture multiple views of a set of objects in the robotic workspace. We first applied [COLMAP](https://colmap.github.io/) to refine the camera poses (keyframes at 6~fps) provided by forward kinematics and RGB calibration from RealSense to Baxter's wrist camera. 3D dense point cloud was then generated via [CascadeStereo](https://github.com/alibaba/cascade-stereo) (included for each sequence in `scene.ply`). Ground truth poses for the HOPE objects models in the world coordinate system were annotated manually. In general, such information is provided: 
+The HOPE-Video dataset contains 10 video sequences (2038 frames) with 5--20 objects on a tabletop scene captured by a robot arm-mounted RealSense D415 RGBD camera. In each sequence, the camera is moved to capture multiple views of a set of objects in the robotic workspace. We first applied [COLMAP](https://colmap.github.io/) to refine the camera poses (keyframes at 6~fps) provided by forward kinematics and RGB calibration from RealSense to Baxter's wrist camera. 3D dense point cloud was then generated via [CascadeStereo](https://github.com/alibaba/cascade-stereo) (included for each sequence in `scene.ply`). Ground truth poses for the HOPE objects models in the world coordinate system were annotated manually using the CascadeStereo point clouds. The following are provided for each frame:
 
-- Camera intrinsic/extrinsic
-- RGB images of 640*480
-- Depth images of 640*480
-- 3D scene reconstruction based on [CascadeStereo](https://github.com/alibaba/cascade-stereo)
+- Camera intrinsics/extrinsics
+- RGB images of 640x480
+- Depth images of 640x480
+- 3D scene reconstruction from [CascadeStereo](https://github.com/alibaba/cascade-stereo)
 - Object pose annotation in the camera frame
 
-<!-- A scene reconstruction computed by [CascadeStereo](https://github.com/alibaba/cascade-stereo) is included for each sequence in `scene.ply`. -->
+![](readme_files/video_01.jpg) ![](readme_files/video_02.jpg) ![](readme_files/video_03.jpg)
 
 ## Objects
 
@@ -54,7 +54,7 @@ As of late 2020, all objects could be obtained from online retailers for about 5
 
 ## Preview tool
 
-Use the included visualization tool `preview.py` to view annotated images in the validation set. The tool requires the following Python packages: numpy, open3d, trimesh, networkx, pyglet, and PIL. The packages can be installed with the following command: `pip install numpy open3d trimesh networkx pyglet Pillow`.
+Use the included visualization tool `preview.py` to view annotated images in the validation set. The tool requires the following Python packages: numpy, open3d, trimesh, networkx, pyglet, and PIL. The packages can be installed with the following command: `pip install numpy open3d trimesh networkx pyglet Pillow`. **There is a [known issue](https://github.com/intel-isl/Open3D/issues/1898) with recent versions of Open3D and Ubuntu 16.04. If you run into this problem, you may need to use Python 3.7 or earlier and revert to an older version of Open3d: `pip install 0.9.0`.**
 
 ```
 Usage: `preview.py [-h] [--showrgb] [--rgbpath PATH] [--depthpath PATH] [--pcpath PATH] [--meshdir PATH] PATH`
