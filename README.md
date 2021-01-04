@@ -54,7 +54,7 @@ As of late 2020, all objects could be obtained from online retailers for about 5
 
 ## Preview tool
 
-Use the included visualization tool `preview.py` to view annotated images in the validation set. The tool requires the following Python packages: numpy, open3d, trimesh, networkx, pyglet, and PIL. The packages can be installed with the following command: `pip install numpy open3d trimesh networkx pyglet Pillow`. **There is a [known issue](https://github.com/intel-isl/Open3D/issues/1898) with recent versions of Open3D and Ubuntu 16.04. If you run into this problem, you may need to use Python 3.7 or earlier and revert to an older version of Open3d: `pip install 0.9.0`.**
+Use the included visualization tool `preview.py` to view annotated images in the validation set. The tool requires the following Python packages: numpy, open3d, trimesh, networkx, pyglet, and PIL. The packages can be installed with the following command: `pip install numpy open3d trimesh networkx pyglet Pillow`. **There is a [known issue](https://github.com/intel-isl/Open3D/issues/1898) with recent versions of Open3D and Ubuntu 16.04. If you run into this problem, you may need to use Python 3.7 or earlier and revert to an older version of Open3d: `pip install open3d==0.9.0`.**
 
 ```
 Usage: `preview.py [-h] [--showrgb] [--rgbpath PATH] [--depthpath PATH] [--pcpath PATH] [--meshdir PATH] PATH`
