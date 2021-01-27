@@ -105,7 +105,7 @@ if args.meshes_eval:
         msg='low-res eval meshes',
         skip_existing=not args.overwrite)
 
-if args.meshes_eval:
+if args.meshes_full:
     download_and_extract(
         'meshes_full',
         msg='full-res meshes',
