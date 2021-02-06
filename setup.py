@@ -31,10 +31,6 @@ parser.add_argument('--image-test', action='store_true',
 
 parser.add_argument('--video', action='store_true',
                     help='Download HOPE-Video dataset')
-parser.add_argument('--video-valid', action='store_true',
-                    help='Download HOPE-Video validation dataset')
-parser.add_argument('--video-test', action='store_true',
-                    help='Download HOPE-Video test dataset')
 
 args = parser.parse_args()
 
@@ -42,7 +38,7 @@ args = parser.parse_args()
 if not any([
     args.meshes, args.meshes_eval, args.meshes_full, 
     args.image, args.image_valid, args.image_test, 
-    args.video, args.video_valid, args.video_test
+    args.video
 ]):
     args.meshes = True
     args.image = True
@@ -55,10 +51,6 @@ if args.meshes:
 if args.image:
     args.image_valid = True
     args.image_test = True
-
-if args.video:
-    args.video_valid = True
-    args.video_test = True
 
 # read list of urls for downloading the dataset
 urls = json.load(open('setup.json'))
@@ -105,7 +97,7 @@ if args.meshes_eval:
         msg='low-res eval meshes',
         skip_existing=not args.overwrite)
 
-if args.meshes_eval:
+if args.meshes_full:
     download_and_extract(
         'meshes_full',
         msg='full-res meshes',
@@ -125,16 +117,9 @@ if args.image_test:
         skip_existing=not args.overwrite
     )
 
-if args.video_valid:
+if args.video:
     download_and_extract(
-        'hope_video_valid', 
-        msg='HOPE-Video validation set',
-        skip_existing=not args.overwrite
-    )
-
-if args.video_test:
-    download_and_extract(
-        'hope_video_test', 
-        msg='HOPE-Video test set',
+        'hope_video', 
+        msg='HOPE-Video dataset',
         skip_existing=not args.overwrite
     )
