@@ -28,7 +28,7 @@ Images were captured using a RealSense D415 RGBD camera. We observed systematic 
 
 ## HOPE-Video
 
-The HOPE-Video dataset contains 10 video sequences (2038 frames) with 5--20 objects on a tabletop scene captured by a robot arm-mounted RealSense D415 RGBD camera. In each sequence, the camera is moved to capture multiple views of a set of objects in the robotic workspace. We first applied [COLMAP](https://colmap.github.io/) to refine the camera poses (keyframes at 6~fps) provided by forward kinematics and RGB calibration from RealSense to Baxter's wrist camera. 3D dense point cloud was then generated via [CascadeStereo](https://github.com/alibaba/cascade-stereo) (included for each sequence in `scene.ply`). Ground truth poses for the HOPE objects models in the world coordinate system were annotated manually using the CascadeStereo point clouds. The following are provided for each frame:
+The HOPE-Video dataset contains 10 video sequences (2038 frames) with 5-20 objects on a tabletop scene captured by a robot arm-mounted RealSense D415 RGBD camera. In each sequence, the camera is moved to capture multiple views of a set of objects in the robotic workspace. We first applied [COLMAP](https://colmap.github.io/) to refine the camera poses (keyframes at 6~fps) provided by forward kinematics and RGB calibration from RealSense to Baxter's wrist camera. 3D dense point cloud was then generated via [CascadeStereo](https://github.com/alibaba/cascade-stereo) (included for each sequence in `scene.ply`). Ground truth poses for the HOPE objects models in the world coordinate system were annotated manually using the CascadeStereo point clouds. The following are provided for each frame:
 
 - Camera intrinsics/extrinsics
 - RGB images of 640x480
