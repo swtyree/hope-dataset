@@ -2,7 +2,7 @@
 
 ![](readme_files/env_01.jpg) ![](readme_files/env_02.jpg) ![](readme_files/env_03.jpg)
 
-The HOPE datasets consist of RGBD images or video sequences with labeled 6-DoF poses for 28 toy grocery objects. The toy grocery objects are readily available for purchase and are ideal for robotic manipulation. We provide 3D textured meshes for generating synthetic training data.
+The NVIDIA HOPE datasets consist of RGBD images and video sequences with labeled 6-DoF poses for 28 toy grocery objects. The toy grocery objects are readily [available for purchase](#objects) and have ideal size and weight for robotic manipulation. Further, we provide 3D textured meshes for generating synthetic training data.
 
 The HOPE-Image dataset shows the objects in 50 scenes from 10 household/office environments. Up to 5 lighting variations are captured for each scene, including backlighting and angled direct lighting with cast shadows. Scenes are cluttered with varying levels of occlusion.
 
@@ -12,7 +12,7 @@ The HOPE-Video dataset consists of ten sequences captured by a camera mounted to
 
 To download the dataset, install the Python package `gdown` via `pip install gdown`, then run `python setup.py` to download the dataset from [Google Drive](https://drive.google.com/drive/folders/1Hj5K9RIdcNxBFiU8qG0-oL3Ryd9f2gOY?usp=sharing) and unpack the zip archives.
 
-By default, this tool will download the HOPE-Image validation and test sets (`hope_image/valid`, 50MB; `hope_image/test`; 179MB), the HOPE-Video set (`hope_video/`, 2.9GB), and low-resolution (`meshes/eval/`, 33MB) and high-resolution (`meshes/full/`, 98MB) meshes. Use the command line options to download only specific parts.
+By default, this tool will download the HOPE-Image validation and test sets (`hope_image/valid`, 50MB; `hope_image/test`; 179MB), the HOPE-Video set (`hope_video/`, 2.9GB), and low-resolution (`meshes/eval/`, 33MB) and high-resolution (`meshes/full/`, 98MB) meshes. Use the command line options to download specific subsets.
 
 ## HOPE-Image
 
