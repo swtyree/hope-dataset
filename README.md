@@ -46,11 +46,11 @@ Objects consist of a set of 28 toy grocery items selected for compatibility with
 
 Full size textured models may be downloaded [here]( https://drive.google.com/drive/folders/1jiJS9KgcYAkfb8KJPp5MRlB0P11BStft).
 
-As of late 2020, all objects could be obtained from online retailers for about 50 USD:
-* [Melissa & Doug "Grocery Boxes"](https://www.amazon.com/gp/product/B071ZMT9S2) ("Crispy Crisps", "Pancake Mix", and "Crackers" were omitted from our dataset because their larger size made scanning difficult)
-* [Melissa & Doug "Let's Play House Grocery Cans"](https://www.amazon.com/gp/product/B007EA6PKS)
-* [Melissa & Doug "Fridge Groceries"](https://www.amazon.com/gp/product/B00H4SKSPS) ("Deli Cheese Slices" and "Deli Meat Slices" were omitted from our dataset because their thin shape made scanning difficult)
-* [Melissa & Doug "Favorite Condiments"](https://www.amazon.com/gp/product/B072M2PGX9)
+As of late 2020, all objects could be obtained from online retailers for about 60 USD:
+* [Melissa & Doug "Let's Play House! Grocery Shelf Boxes"](https://www.melissaanddoug.com/lets-play-house-grocery-shelf-boxes/5501.html) ([Amazon](https://www.amazon.com/gp/product/B071ZMT9S2)) ("Crispy Crisps", "Pancake Mix", and "Crackers" were omitted from our dataset because their larger size made scanning difficult)
+* [Melissa & Doug "Let's Play House! Grocery Cans"](https://www.melissaanddoug.com/lets-play-house-grocery-cans/4088.html) ([Amazon](https://www.amazon.com/gp/product/B007EA6PKS))
+* [Melissa & Doug "Let's Play House! Fridge Fillers"](https://www.melissaanddoug.com/lets-play-house-fridge-fillers/4316.html) ([Amazon](https://www.amazon.com/gp/product/B00H4SKSPS)) ("Deli Cheese Slices" and "Deli Meat Slices" were omitted from our dataset because their thin shape made scanning difficult)
+* [Melissa & Doug "Favorite Condiments"](https://www.melissaanddoug.com/favorite-condiments/4317.html) ([Amazon](https://www.amazon.com/gp/product/B072M2PGX9))
 
 ## Preview tool
 
