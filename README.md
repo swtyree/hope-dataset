@@ -14,6 +14,8 @@ To download the dataset, install the Python package `gdown` via `pip install gdo
 
 By default, this tool will download the HOPE-Image validation and test sets (`hope_image/valid`, 50MB; `hope_image/test`; 179MB), the HOPE-Video set (`hope_video/`, 2.9GB), and low-resolution (`meshes/eval/`, 33MB) and high-resolution (`meshes/full/`, 98MB) meshes. Use the command line options to download specific subsets.
 
+Note that the HOPE-Image dataset is also part of the [BOP challenge](https://bop.felk.cvut.cz/datasets/#HOPE) and can be downloaded there.
+
 ## HOPE-Image
 
 The HOPE-Image dataset contains 188 test images taken in 8 environments, with a total of 40 scenes (unique camera and object poses). An additional 50 validation images are included from 2 environments in 10 scene arrangements.
@@ -24,7 +26,7 @@ Within each scene, up to 5 lighting variations are captured with the same camera
 
 Images were captured using a RealSense D415 RGBD camera. We observed systematic errors in the depth values relative to the estimated distance of a calibration grid. To correct for this, we scaled depth frames by a factor of `0.98042517` before registering to RGB. Annotations were made manually using these corrected RGBD frames.
 
-**NOTE: Only validation set annotations are included in this current release. Test annotations will be made available at a later time.**
+NOTE: Only validation set annotations are included.  Test annotations are managed by the [BOP challenge](https://bop.felk.cvut.cz/datasets/#HOPE).
 
 ## HOPE-Video
 
