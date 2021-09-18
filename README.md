@@ -38,6 +38,14 @@ The HOPE-Video dataset contains 10 video sequences (2038 frames) with 5-20 objec
 - 3D scene reconstruction from [CascadeStereo](https://github.com/alibaba/cascade-stereo)
 - Object pose annotation in the camera frame
 
+**NOTE!** It was brought to out attention that the camera extrinsic matrices in HOPE-Video have a mistake in units and are unclearly labeled. Object poses are expressed in `cm`, but we mistakenly expressed camera extrinsics in `m`. In addition, extrinsics are written as world-to-camera matrices. If you would like to transform a pose in camera coordinates to world coordinates, use this correction for now:
+```python
+extrinsics_w2c = annots['camera']['extrinsics']
+extrinsics_w2c[:3,-1] *= 100  # correct the translation units from m to cm
+extrinsics_c2w = np.linalg.inv(extrinsics_w2c)
+pose_world = extrinsics_c2w @ pose_camera
+```
+
 ![](readme_files/video_01.jpg) ![](readme_files/video_02.jpg) ![](readme_files/video_03.jpg)
 
 ## Objects
