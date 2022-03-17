@@ -28,6 +28,16 @@ Images were captured using a RealSense D415 RGBD camera. We observed systematic 
 
 NOTE: Only validation set annotations are included.  Test annotations are managed by the [BOP challenge](https://bop.felk.cvut.cz/datasets/#HOPE).
 
+If you use HOPE-Image in your own experiments, please cite the following paper ([arXiv](https://arxiv.org/abs/2203.05701)):
+```
+@inproceedings{tyree2022hope,
+  author={Tyree, Stephen and Tremblay, Jonathan and To, Thang and Cheng, Jia and Mosier, Terry and Smith, Jeffrey and Birchfield, Stan},
+  title={6-DoF Pose Estimation of Household Objects for Robotic Manipulation: An Accessible Dataset and Benchmark},
+  booktitle={arXiv preprint arXiv:2203.05701},
+  year={2022}
+}
+```
+
 ## HOPE-Video
 
 The HOPE-Video dataset contains 10 video sequences (2038 frames) with 5-20 objects on a tabletop scene captured by a robot arm-mounted RealSense D415 RGBD camera. In each sequence, the camera is moved to capture multiple views of a set of objects in the robotic workspace. We first applied [COLMAP](https://colmap.github.io/) to refine the camera poses (keyframes at 6~fps) provided by forward kinematics and RGB calibration from RealSense to Baxter's wrist camera. 3D dense point cloud was then generated via [CascadeStereo](https://github.com/alibaba/cascade-stereo) (included for each sequence in `scene.ply`). Ground truth poses for the HOPE objects models in the world coordinate system were annotated manually using the CascadeStereo point clouds. The following are provided for each frame:
@@ -44,6 +54,18 @@ extrinsics_w2c = annots['camera']['extrinsics']
 extrinsics_w2c[:3,-1] *= 100  # correct the translation units from m to cm
 extrinsics_c2w = np.linalg.inv(extrinsics_w2c)
 pose_world = extrinsics_c2w @ pose_camera
+```
+
+If you use HOPE-Video in your own experiments, please cite the following paper ([website](https://research.nvidia.com/publication/2021-03_MVML), [arXiv](https://arxiv.org/abs/2103.13539)):
+```
+@inproceedings{lin2021fusion,
+  author={Lin, Yunzhi and Tremblay, Jonathan and Tyree, Stephen and Vela, Patricio A. and Birchfield, Stan},  
+  booktitle={2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},   
+  title={Multi-view Fusion for Multi-level Robotic Scene Understanding},   
+  year={2021},
+  pages={6817-6824},
+  doi={10.1109/IROS51168.2021.9635994}
+}
 ```
 
 ![](readme_files/video_01.jpg) ![](readme_files/video_02.jpg) ![](readme_files/video_03.jpg)
