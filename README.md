@@ -33,7 +33,7 @@ If you use HOPE-Image in your own experiments, please cite the following paper (
 @inproceedings{tyree2022hope,
   author={Tyree, Stephen and Tremblay, Jonathan and To, Thang and Cheng, Jia and Mosier, Terry and Smith, Jeffrey and Birchfield, Stan},
   title={6-DoF Pose Estimation of Household Objects for Robotic Manipulation: An Accessible Dataset and Benchmark},
-  booktitle={arXiv preprint arXiv:2203.05701},
+  booktitle={International Conference on Intelligent Robots and Systems (IROS)},
   year={2022}
 }
 ```
@@ -60,7 +60,7 @@ If you use HOPE-Video in your own experiments, please cite the following paper (
 ```
 @inproceedings{lin2021fusion,
   author={Lin, Yunzhi and Tremblay, Jonathan and Tyree, Stephen and Vela, Patricio A. and Birchfield, Stan},  
-  booktitle={2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},   
+  booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},   
   title={Multi-view Fusion for Multi-level Robotic Scene Understanding},   
   year={2021},
   pages={6817-6824},
